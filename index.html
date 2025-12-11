@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATB.COM | Интернет провайдер | подключить офис в Алматы, Астане и Шымкент</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .cities {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .cities a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .cities a:hover, .cities a.active {
+            color: #fff;
+        }
+        
+        .top-contacts a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #e94560;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #e94560;
+        }
+        
+        .btn-connect {
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn-connect:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(233,69,96,0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            background-size: 50px 50px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: #e94560;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #e94560;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .btn-primary {
+            background: #e94560;
+            color: #fff;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            background: #ff6b6b;
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 15px 35px;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn-secondary:hover {
+            background: #fff;
+            color: #1a1a2e;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        
+        .service-icon i {
+            font-size: 30px;
+            color: #fff;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .service-card a {
+            color: #e94560;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .service-card a:hover {
+            gap: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about h2 {
+            font-size: 36px;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+        }
+        
+        .about p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: #f0f4ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon i {
+            color: #e94560;
+            font-size: 20px;
+        }
+        
+        .feature h4 {
+            font-size: 16px;
+            color: #1a1a2e;
+            margin-bottom: 5px;
+        }
+        
+        .feature p {
+            font-size: 14px;
+            color: #888;
+            margin: 0;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: #1a1a2e;
+            color: #fff;
+        }
+        
+        .testimonials .section-title h2 {
+            color: #fff;
+        }
+        
+        .testimonials .section-title p {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .author-info h4 {
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+        
+        .author-info span {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa, #e8ecef);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #1a1a2e;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+        
+        .contact-form .btn-primary {
+            width: 100%;
+        }
+        
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #1a1a2e;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .info-icon i {
+            color: #fff;
+            font-size: 24px;
+        }
+        
+        .info-text h4 {
+            font-size: 18px;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+        }
+        
+        .info-text p {
+            color: #666;
+        }
+        
+        .info-text a {
+            color: #e94560;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-about .logo {
+            color: #fff;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-about p {
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: background 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #e94560;
+        }
+        
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #e94560;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #1a1a2e;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cities {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="cities">
+                <a href="#" class="active">Алматы</a>
+                <a href="#">Астана</a>
+                <a href="#">Шымкент</a>
+                <a href="#">Актау</a>
+                <a href="#">Атырау</a>
+                <a href="#">Актобе</a>
+                <a href="#">Караганда</a>
+                <a href="#">Павлодар</a>
+                <a href="#">Петропавловск</a>
+                <a href="#">Семей</a>
+                <a href="#">Тараз</a>
+                <a href="#">Уральск</a>
+            </div>
+            <div class="top-contacts">
+                <a href="tel:+77755107390">+7 775 510 73 90</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">ATB<span>.COM</span></a>
+                <nav>
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Интернет</a></li>
+                        <li><a href="#">IP-телефония</a></li>
+                        <li><a href="#">IT-услуги</a></li>
+                        <li><a href="#">Безопасность</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                <button class="btn-connect">Подключить</button>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                    <h1><span>ИНТЕРНЕТ</span> ПРОВАЙДЕР</h1>
+                    <p>Высокоскоростной интернет без ограничений для бизнеса и индивидуальных пользователей. Доступен во всех уголках Казахстана, даже в отдаленных районах.</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-value">10 Гбит/с</div>
+                            <div class="stat-label">Еще больше скорости</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">от 2 дней</div>
+                            <div class="stat-label">Быстрое подключение</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">Выгодно</div>
+                            <div class="stat-label">Конкурентные цены</div>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary">Для юр. лиц</a>
+                        <a href="#contact" class="btn-secondary">Для физ. лиц</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Placeholder for image -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши услуги</h2>
+                <p>Интернет провайдер ATB.COM предлагает высокоскоростной безлимитный интернет, услуги IP-телефонии и комплексные решения в области IT.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Интернет для бизнеса</h3>
+                    <p>Высокоскоростной безлимитный интернет. Подключение по оптоволокну. Скорость до 10 Гбит/сек.</p>
+                    <a href="#">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Интернет для дома</h3>
+                    <p>Безлимитный интернет для частных лиц. Подключение по оптоволокну/радио. Скорость до 1000 Мбит/сек.</p>
+                    <a href="#">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>IT аутсорсинг</h3>
+                    <p>Штат квалифицированных IT специалистов, качественно и оперативно решит любую проблему клиента.</p>
+                    <a href="#">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Видеонаблюдение</h3>
+                    <p>Комплексные решения. Просмотр в реальном времени с ПК, ноутбука или смартфона.</p>
+                    <a href="#">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <h3>IP телефония</h3>
+                    <p>VOIP и SIP телефония для Бизнеса. Предоставление стационарной или виртуальной АТС.</p>
+                    <a href="#">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Системы контроля доступа</h3>
+                    <p>Внедрение систем контроля доступа и учета времени сотрудников. Детализированные отчеты.</p>
+                    <a href="#">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Кибербезопасность</h3>
+                    <p>Ваши конфиденциальные данные всегда в безопасности с новым выгодным предложением.</p>
+                    <a href="#">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Data центр</h3>
+                    <p>Ваш собственный сервер для любых типов задач. Никаких ограничений, меняйте конфигурацию в любой момент.</p>
+                    <a href="#">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Wi-Fi Hotspot</h3>
+                    <p>Система бесплатной авторизации для ваших клиентов для доступа к WiFi интернету через SMS.</p>
+                    <a href="#">Подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h2>Интернет провайдер</h2>
+                    <p>Более 9 лет казахстанский провайдер ATB.COM занимает лидирующие позиции в сфере IT-услуг для бизнеса. За это время нам удалось обеспечить подключение для свыше 6000 компаний в 45+ городах по всему Казахстану.</p>
+                    <a href="#contact" class="btn-primary">Начать сотрудничать</a>
+                </div>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <div>
+                            <h4>Гибкая тарификация</h4>
+                            <p>Индивидуальные тарифы позволяют эффективно снизить расходы</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div>
+                            <h4>Адрес IPv6</h4>
+                            <p>Масштабируемость, улучшенная безопасность и автоматизация</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div>
+                            <h4>VPN L3 сети</h4>
+                            <p>Легкое объединение филиалов компании в единую сеть</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div>
+                            <h4>Поддержка 24/7</h4>
+                            <p>Круглосуточная поддержка клиентов и мониторинг оборудования</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши клиенты</h2>
+                <p>Отзывы наших довольных клиентов</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Отличный интернет! Очень доволен! Обслуживание на высшем профессиональном уровне. Хотел бы отдельно отметить профессиональный монтаж кабеля до устройства. Всем рекомендую"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">МШ</div>
+                        <div class="author-info">
+                            <h4>Максим Шмонин</h4>
+                            <span>Руководитель</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Подключала интернет через компанию ATB.COM. Очень шустрые, быстрые и терпеливые ребята! Консультируют по каждой мелочи, всегда честны. Всем рекомендую!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ZF</div>
+                        <div class="author-info">
+                            <h4>ZF</h4>
+                            <span>Предприниматель</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Оставил заявку. В течение часа подписал договор. На следующий день подключили и настроили интернет. Интернетом доволен, рекомендую."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">АМ</div>
+                        <div class="author-info">
+                            <h4>Андрей Мухачев</h4>
+                            <span>Руководитель</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Отличный интернет-провайдер. Оперативная реакция на неполадки. Готовы пойти навстречу клиенту в случае нестандартных ситуаций"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ДП</div>
+                        <div class="author-info">
+                            <h4>Даниил Письмак</h4>
+                            <span>Руководитель</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Заявка на подключение</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Компания" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Контактное лицо" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Телефон" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Получить предложение</button>
+                    </form>
+                    <p style="margin-top: 15px; font-size: 13px; color: #888;">*Данные будут использованы только для связи с вами.</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Контакты</h3>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Адрес</h4>
+                            <p>Республика Казахстан, г. Алматы<br>Пн.-Пт. 09.00 – 18.00</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>Телефоны</h4>
+                            <p>
+                                <a href="tel:+77755107390">+7 775 510 73 90</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:sales@atb.com">sales@atb.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">ATB<span>.COM</span></a>
+                    <p>Высокоскоростной интернет и IT-услуги для бизнеса по всему Казахстану.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#">Интернет</a></li>
+                        <li><a href="#">IP-телефония</a></li>
+                        <li><a href="#">IT-аутсорсинг</a></li>
+                        <li><a href="#">Видеонаблюдение</a></li>
+                        <li><a href="#">Безопасность</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Оборудование</h4>
+                    <ul>
+                        <li><a href="#">Для сети</a></li>
+                        <li><a href="#">Для IP-телефонии</a></li>
+                        <li><a href="#">Телефоны</a></li>
+                        <li><a href="#">IP шлюзы</a></li>
+                        <li><a href="#">IP АТС</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Ссылки</h4>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Акции</a></li>
+                        <li><a href="#">Договор</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2024 ATB.COM | Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
